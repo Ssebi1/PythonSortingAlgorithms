@@ -58,3 +58,18 @@ app.get('/',(req,res) => {
 
     
 })
+
+
+app.get('/view_testcase',(req,res) => {
+    testcase = req.query.testcase.toLowerCase().replace(':','')
+
+    let output_data;
+    fs.readFile('../Testcases/'+testcase+'.txt', 'utf8', function (err,data) {
+        if (err) {
+        return console.log(err);
+        }
+        res.send(data)
+    });
+
+    
+})

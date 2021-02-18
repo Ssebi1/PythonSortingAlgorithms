@@ -14,11 +14,14 @@
         <div class="testcase">
 
             <% Object.keys(data).forEach(function(d){ %>
-                <h1><%= d %></h1>
+                <ul class="text_list">
+                    <li class="text_list_item" style="padding:0 0 5px 10px"><%= d %></li>
+                    <a href="/view_testcase?testcase=<%=d%>" target="_blank"><li class="text_list_item" style="padding:0 10px 5px 0">view test</li></a>
+                </ul>
                 <div class="chart">
                     <% data[d].forEach(function(bar){ %>
                     <div class="chart_bar"style="height: <%= bar.time*100/bar.total %>%;max-height:85%; background-color:<%= bar.color %>;">
-                        <h4 class="chart_bar_time"><%= bar.time %>s</h4>
+                        <h4 class="chart_bar_time" ><%= bar.time %>s</h4>
                         <h4 class="chart_bar_text" ><%= bar.sort %></h4>
                     </div>
                     <% }); %>
@@ -31,12 +34,6 @@
 
 
     </div>
-
-
-
-
-
-
 
 
     <script type="text/javascript" src="script.js"></script>
