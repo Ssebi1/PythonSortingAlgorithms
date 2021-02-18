@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='style.css'>
+    <title>Sortari</title>
+</head>
+<body>
+
+    <div class="main-area">
+
+        <div class="testcase">
+
+            <% Object.keys(data).forEach(function(d){ %>
+                <h1><%= d %></h1>
+                <div class="chart">
+                    <% data[d].forEach(function(bar){ %>
+                    <div class="chart_bar"style="height: <%= bar.time*100/bar.total %>%;max-height:85%; background-color:<%= bar.color %>;">
+                        <h4 class="chart_bar_time"><%= bar.time %>s</h4>
+                        <h4 class="chart_bar_text" ><%= bar.sort %></h4>
+                    </div>
+                    <% }); %>
+                </div>
+                <br><br><br><br>
+            <% }); %>
+            
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
