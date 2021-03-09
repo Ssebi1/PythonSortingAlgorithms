@@ -1,13 +1,28 @@
+@font-face {
+    font-family: generalFont;
+    src: url(../fonts/Roboto-Regular.ttf);
+  }
+
 body{
     margin:0;
     padding:0;
+    text-align: center;
+    font-family: generalFont;
+}
+
+.title{
+    margin:0 auto;
+    font-size: 35px;
+    margin-top:40px;
+    margin-bottom:100px;
+    font-weight: 600;
 }
 
 .testcase{
     position: relative;
     text-align: center;
-    width:60%;
-    max-width: 1000px;
+    width:100%;
+    max-width: 1700px;
     margin:0 auto;
 }
 
@@ -23,15 +38,15 @@ body{
     background-color:rgb(253, 243, 229);
     border-radius: 10px;
     align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .chart_bar{
     position: relative;
+    width:100%;
+    max-width:120px;
     margin:0 auto;
-    flex-grow: 1;
-    margin:0 7% 0 7%;
-    width:120px;
-    height:80%;
     background-color:mediumseagreen;
 }
 
@@ -40,7 +55,7 @@ body{
     left:0;
     right:0;
     bottom:-50px;
-    font-size:18px;
+    font-size:17px;
 }
 
 .chart_bar_time{
@@ -77,8 +92,102 @@ body{
     margin-top:50px;
 }
 
+@media only screen and (max-width: 900px) {
+    .chart_bar{
+        max-width:60px;
+    }
+    .chart_bar_text, .chart_bar_time{
+        font-size:12px;
+    }
+  }
+
 @media only screen and (max-width: 600px) {
     .testcase{
         width:95%;
+    }
+    .chart_bar{
+        max-width:60px;
+    }
+    .chart_bar_time{
+        display: none;
+    }
+    .chart_bar_text{
+        font-size: 8px;
+    }
+  }
+
+.conclusions-area{
+    width:100%;
+    max-width: 1700px;
+    height:auto;
+    margin:0 auto;
+    margin-top:60px;
+    margin-bottom:30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conclusion{
+    width:45%;
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin:0 auto;
+    padding:30px;
+    background:#eaf2ff;
+    margin-bottom:20px;
+    border-radius: 20px;
+    transition:0.2s ease-in-out;
+    cursor:default;
+}
+.conclusion i{
+    padding:10px;
+    font-size:30px;
+    color:#6495ED;
+}
+
+@media only screen and (max-width: 900px) {
+    .conclusion{
+        width:80%;
+    }
+  }
+
+.footer{
+    width:80%;
+    max-width:500px;
+    height:150px;
+    margin:0 auto;
+    background:rgb(253, 243, 229);
+    display: flex;
+    align-items: center;
+    margin-top:50px;
+    margin-bottom:50px;
+    border-radius:70px 10px 10px 70px;
+}
+
+
+.footer img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+}
+
+.footer-content{
+    list-style-type: none;
+    text-align: left;
+    font-size:17px;
+    margin-left:8%;
+}
+.footer-content-item a{
+    color:black;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .footer-content{
+        font-size:12px;
+        margin-left:0;
     }
   }

@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+    <script src="https://kit.fontawesome.com/b42cb1ab32.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href='style.css'>
-    <title>Sortari</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Algoritmi de sortare</title>
 </head>
 <body>
 
     <div class="main-area">
-
+        <div class="title">Algoritmi de Sortare</div>
         <div class="testcase">
-
             <% Object.keys(data).forEach(function(d){ %>
-                <ul class="text_list">
+                <ul class="text_list" data-aos="fade-left">
                     <li class="text_list_item" style="padding:0 0 5px 10px"><%= d %></li>
                     <a href="/view_testcase?testcase=<%=d%>" target="_blank"><li class="text_list_item" style="padding:0 10px 5px 0">view test</li></a>
                 </ul>
-                <div class="chart">
+                <div class="chart" data-aos="fade-left">
                     <% data[d].forEach(function(bar){ %>
                     <div class="chart_bar"style="height: <%= bar.time*100/bar.total %>%;max-height:85%; background-color:<%= bar.color %>;">
                         <h4 class="chart_bar_time" ><%= bar.time %>s</h4>
-                        <h4 class="chart_bar_text" ><%= bar.sort %></h4>
+                        <% if(bar.time==data[d].maxi){ %>
+                        <h4 class="chart_bar_text" style="color:red;" ><%= bar.sort %></h4>
+                        <% }else if(bar.time==data[d].mini){ %>
+                            <h4 class="chart_bar_text" style="color:green;" ><%= bar.sort %></h4>
+                        <% } else{ %>
+                            <h4 class="chart_bar_text" ><%= bar.sort %></h4>
+                        <% } %>
                     </div>
                     <% }); %>
                 </div>
                 <br><br><br><br>
             <% }); %>
             
-
         </div>
-
-
+        <div class="conclusions-area">
+            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+        </div>
+        <div class="footer" data-aos="fade-right">
+            <img src="./images/profile.jpg" alt="">
+            <ul class="footer-content">
+                <li class="footer-content-item"><b>Dăncău Sebastian</b></li>
+                <li class="footer-content-item"><a href="https://www.dancau-sebastian.com/" target="_blank"><i class="fa fa-globe" style="font-size:12px"></i> dancau-sebastian.com</a></li>
+                <li class="footer-content-item">Facultatea de Matematică<br>și Informatică</li>
+            </ul>
+        </div>
     </div>
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script>
+        AOS.init({
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: true, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'bottom-bottom', // defines which position of the element regarding to window should trigger the animation
+        });
+    </script>
 </body>
 </html>

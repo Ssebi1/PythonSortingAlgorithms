@@ -25,6 +25,8 @@ app.get('/',(req,res) => {
         let colors = ['#228B22','#6495ED','#D2691E','#FF7F50','#BDB76B']
         let ct=0;
         let total = 0;
+        let mini = Number.MAX_VALUE
+        let maxi = -1
         for(var i=0;i<output_data.length;i++)
         {
             if(output_data[i][output_data[i].length-1]==':')
@@ -34,17 +36,28 @@ app.get('/',(req,res) => {
                         for(let j=0;j<data[testcase].length;j++)
                             data[testcase][j]['total'] = total;
                     }
-
+                    if(maxi!=-1)
+                    {
+                        data[testcase]['mini'] = mini
+                        data[testcase]['maxi'] = maxi
+                    }
                     data[output_data[i]] = []
                     testcase = output_data[i];
                     total = 0;
                     ct = 0;
+                    mini = Number.MAX_VALUE
+                    maxi = -1
                 }
             else if(output_data[i].length>1)
                 {
                     data[testcase].push({sort:output_data[i].split(':')[0],time:parseFloat(output_data[i].split(':')[1].slice(1).replace('s','')),color:colors[ct]})
                     ct ++;
-                    total += parseFloat(output_data[i].split(':')[1].replace('s',''))
+                    let nr = parseFloat(output_data[i].split(':')[1].replace('s',''));
+                    total += nr;
+                    if(nr<mini)
+                        mini = nr;
+                    if(nr>maxi)
+                        maxi = nr;
                 }
         }
 
@@ -52,6 +65,11 @@ app.get('/',(req,res) => {
         {
             for(let j=0;j<data[testcase].length;j++)
                 data[testcase][j]['total'] = total;
+        }
+        if(maxi!=-1)
+        {
+            data[testcase]['mini'] = mini
+            data[testcase]['maxi'] = maxi
         }
         res.render('index',{data:data});
     });
