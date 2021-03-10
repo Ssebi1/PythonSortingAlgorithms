@@ -1,45 +1,90 @@
 Testcase1:
-BubbleSort: 0.0000228640s
-CountSort: 0.0000128040s
-MergeSort: 0.0000334840s
-QuickSort: 0.0000436460s
-InsertionSort: 0.0000141330s
-BucketSort: 0.0000187810s
-PythonSort: 0.0000020720s
+BubbleSort: 0.0000215270s
+CountSort: 0.0000129560s
+MergeSort: 0.0000284500s
+QuickSort: 0.0000314630s
+QuickSortMedian3: 0.0000289870s
+BucketSort: 0.0000145660s
+InsertionSort: 0.0000089390s
+PythonSort: 0.0000017110s
 
 Testcase2:
-BubbleSort: 0.0618951180s
-CountSort: 0.0019371830s
-MergeSort: 0.0022955080s
-QuickSort: 0.0014221660s
-InsertionSort: 0.0271775620s
-BucketSort: 0.0006381790s
-PythonSort: 0.0000821890s
+BubbleSort: 0.0726103400s
+CountSort: 0.0017739090s
+MergeSort: 0.0023060790s
+QuickSort: 0.0016858200s
+QuickSortMedian3: 0.0017181600s
+BucketSort: 0.0003983870s
+InsertionSort: 0.0273149870s
+PythonSort: 0.0000826750s
 
 Testcase3:
-BubbleSort: 0.0000216060s
-CountSort: 0.0234000030s
-MergeSort: 0.0000461710s
-QuickSort: 0.0000164120s
-InsertionSort: 0.0000140780s
-BucketSort: 0.0036379020s
-PythonSort: 0.0000019710s
+BubbleSort: 0.0582555110s
+CountSort: 0.0001250890s
+MergeSort: 0.0023053200s
+QuickSort: 0.0020630340s
+QuickSortMedian3: 0.0022199520s
+BucketSort: 0.0074578100s
+InsertionSort: 0.0286879360s
+PythonSort: 0.0000825590s
 
 Testcase4:
-BubbleSort: 0.0591383650s
-CountSort: 0.0003030180s
-MergeSort: 0.0022757710s
-QuickSort: 0.0015403410s
-InsertionSort: 0.0298107580s
-BucketSort: 0.0007384510s
-PythonSort: 0.0000854230s
+BubbleSort: 0.0610396840s
+CountSort: 0.0003137350s
+MergeSort: 0.0022949180s
+QuickSort: 0.0020485770s
+QuickSortMedian3: 0.0018736090s
+BucketSort: 0.0010583010s
+InsertionSort: 0.0297443930s
+PythonSort: 0.0000887880s
 
 Testcase5:
-BubbleSort: 0.0604705410s
-CountSort: 0.1934284840s
-MergeSort: 0.0022139790s
-QuickSort: 0.0014145210s
-InsertionSort: 0.0284467730s
-BucketSort: 0.0334486240s
-PythonSort: 0.0000836810s
+BubbleSort: 0.0635308300s
+CountSort: 0.1922004830s
+MergeSort: 0.0022710540s
+QuickSort: 0.0017600930s
+QuickSortMedian3: 0.0018307500s
+BucketSort: 0.0103039850s
+InsertionSort: 0.0302090920s
+PythonSort: 0.0000883810s
+
+Testcase6:
+BubbleSort: 6.5463854150s
+CountSort: 0.0014516910s
+MergeSort: 0.0317485120s
+QuickSort: 0.0251886520s
+QuickSortMedian3: 0.0264063900s
+BucketSort: 0.2973172120s
+InsertionSort: 3.0684674710s
+PythonSort: 0.0011276230s
+
+Testcase7:
+BubbleSort: 0.0000000000s
+CountSort: 0.7090242880s
+MergeSort: 5.1989021320s
+QuickSort: 8.3240475080s
+QuickSortMedian3: 3.7886729880s
+BucketSort: 0.0000000000s
+InsertionSort: 0.0000000000s
+PythonSort: 0.2715589130s
+
+Testcase8:
+BubbleSort: 0.0418129460s
+CountSort: 0.0001084200s
+MergeSort: 0.0021362670s
+QuickSort: 0.0732636800s
+QuickSortMedian3: 0.0781367410s
+BucketSort: 0.0002999280s
+InsertionSort: 0.0001460230s
+PythonSort: 0.0000059780s
+
+Testcase9:
+BubbleSort: 0.0368144090s
+CountSort: 0.0003250840s
+MergeSort: 0.0021881900s
+QuickSort: 0.0020644990s
+QuickSortMedian3: 0.0019897430s
+BucketSort: 0.0002919050s
+InsertionSort: 0.0001475000s
+PythonSort: 0.0000050920s
 

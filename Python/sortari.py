@@ -1,3 +1,6 @@
+import math
+import random
+
 def BubbleSort(list):
     for i in range(0,len(list)-1):
         for j in range(0,len(list)-i-1):
@@ -58,7 +61,31 @@ def QuickSort(list, low=0, high=-1):
     if low >= high:
         return list
 
-    index = high
+    index = random.randint(low,high)
+    i = low - 1
+    for j in range(low, high):
+        if list[j] <= list[index]:
+            i += 1
+            list[i], list[j] = list[j], list[i]
+    list[i + 1], list[high],index = list[high], list[i+1],i+1
+
+    QuickSort(list, low, index - 1)
+    QuickSort(list, index + 1, high)
+
+
+def mediana(list,a,b,c):
+    l3 = [(el,list[el]) for el in [a,b,c]]
+    l3.sort(key = lambda t:t[1])
+    return l3[1][0]
+
+
+def QuickSortMedian3(list, low=0, high=-1):
+    if high==-1:
+        high = len(list)-1
+    if low >= high:
+        return list
+
+    index = mediana(list,low,high,(low+high)//2)
     i = low - 1
     for j in range(low, high):
         if list[j] <= list[index]:
@@ -74,18 +101,15 @@ def InsertionSort(list):
     for i in range(1,len(list)):
         index = list[i]
         j = i-1
-        for j in range(i-1,-1,-1):
-            if index<list[j]:
-                list[j+1] = list[j]
-                j -= 1
-            else:
-                break
+        while j>=0 and index<list[j]:
+            list[j+1] = list[j]
+            j = j-1
         list[j+1] = index
     return list
 
 
 def BucketSort(list):
-    nr = 10
+    nr = int(math.sqrt(len(list)))
     maxi = max(list)
     nr_of_buckets = maxi//nr
     b = [[] for _ in range(0,nr_of_buckets+1)]
