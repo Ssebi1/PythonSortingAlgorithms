@@ -23,7 +23,11 @@
                 <div class="chart" data-aos="fade-left">
                     <% data[d].forEach(function(bar){ %>
                     <div class="chart_bar"style="height: <%= bar.time*100/bar.total %>%;max-height:85%; background-color:<%= bar.color %>;">
-                        <h4 class="chart_bar_time" ><%= bar.time %>s</h4>
+                        <% if(bar.time==0){ %>
+                            <h4 class="chart_bar_text" style="color:black;transform:translateY(-30px)">-</h4>
+                        <% }else{ %>
+                            <h4 class="chart_bar_time" ><%= bar.time %>s</h4>
+                        <% } %>
                         <% if(bar.time==data[d].maxi){ %>
                         <h4 class="chart_bar_text" style="color:red;" ><%= bar.sort %></h4>
                         <% }else if(bar.time==data[d].mini){ %>
@@ -40,11 +44,9 @@
         </div>
         <div class="conclusions-area">
             <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
-            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
-            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
-            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
-            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
-            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Count sort este mai rapid decat alti algoritmi pentru numere mici, insa devine foarte lent in momentul in care avem numere mai mari</div>
+            <div class="conclusion" data-aos="fade-left"><i class="fas fa-info-circle"></i>Bubble sort este in cele mai multe cazuri mai lent decat restul algoritmilor, avand complexitate O(n^2)</div>
+            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>QuickSort cu pivot random are timp asemanator cu QuickSort cu pivot mediana de 3 si functioneaza bine indiferent de numarul de elemente si de maximul lor.</div>
+            <div class="conclusion" data-aos="fade-right"><i class="fas fa-info-circle"></i>BubbleSort, BucketSort si Insertion sort au nevoie de mult timp in momentul in care sortam o lista cu mai mult de 10^4 elemente</div>
         </div>
         <div class="footer" data-aos="fade-right">
             <img src="./images/profile.jpg" alt="">

@@ -54,9 +54,9 @@ app.get('/',(req,res) => {
                     ct ++;
                     let nr = parseFloat(output_data[i].split(':')[1].replace('s',''));
                     total += nr;
-                    if(nr<mini)
+                    if(nr<mini && nr!=0)
                         mini = nr;
-                    if(nr>maxi)
+                    if(nr>maxi && nr!=0)
                         maxi = nr;
                 }
         }
